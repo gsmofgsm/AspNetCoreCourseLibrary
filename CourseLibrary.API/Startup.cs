@@ -82,6 +82,10 @@ namespace CourseLibrary.API
                 };
             });
 
+            // register PropertyMappingService
+            // Transient is a lifetime advised for lightweight stateless services
+            services.AddTransient<IPropertyMappingService, PropertyMappingService>();
+
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddScoped<ICourseLibraryRepository, CourseLibraryRepository>();
